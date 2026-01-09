@@ -7,7 +7,8 @@ This PR introduces the CakeSwap CLMM stake endpoint, refactors and organizes scr
 DEPENDCIES
 ----------
 - This is the 2nd stage in the process in exposing the PancakeSwap CLMM pools.
-- The 1st stage and REQUIRED initial step is the re-introduction of the PancakeSwap API endpoints for the Fateway to consume.
+- The 1st stage and REQUIRED initial step is the re-introduction of the PancakeSwap API endpoints for the Gateway to consume.
+  - API Endpoint PR: https://github.com/hummingbot/hummingbot-api/pull/105
 
 Key Changes
 -----------
