@@ -20,10 +20,3 @@ Limitations
 
 Files in this folder
 --------------------
-- `CONTEXT.md` — repo-specific context and important pointers.
-- `LEXICON.md` — project terms and abbreviations we agreed on.
-- `USAGE.md` — how we work together and the helper command.
-- `SESSION_NOTES.md` — rolling notes for the current session (edited by the assistant).
-- `load_assistant_context.sh` — helper script to print the above files.
-
-If you want me to enforce or automatically consult these files on future sessions, include that instruction at the top of the conversation and I will read them before making changes.
