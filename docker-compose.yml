@@ -1,17 +1,19 @@
 services:
-  gateway:
+  hummingbot-gateway:
     restart: always
-    container_name: gateway
-    image: hummingbot/gateway:PR543
-    # build: # Uncomment this build section and comment image to build Hummingbot locally
-    #   context: .
-    #   dockerfile: Dockerfile
+    container_name: hummingbot-gateway
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: VeXHarbinger/gateway:feature-clmm-add-remove-liquidity
     ports:
       - "15888:15888"
     volumes:
-      - ./conf:/home/gateway/conf
-      - ./logs:/home/gateway/logs
-      - ./certs:/home/gateway/certs
+      - "./gateway-files/conf:/home/gateway/conf"
+      - "./gateway-files/logs:/home/gateway/logs"
+      - "./certs:/home/gateway/certs"
+      - gateway-wallets:/home/gateway/conf/wallets
     environment:
-      - GATEWAY_PASSPHRASE=a # replace with a strong passphrase
-      - DEV=true # set to false to require certificates for HTTPS
+      GATEWAY_PASSPHRASE: admin
+      DEV: 'true'
+

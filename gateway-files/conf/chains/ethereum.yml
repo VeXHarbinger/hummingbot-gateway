@@ -1,0 +1,3 @@
+defaultNetwork: mainnet
+defaultWallet: '0xA57d70a25847A7457ED75E4e04F8d00bf1BE33bC'
+rpcProvider: url

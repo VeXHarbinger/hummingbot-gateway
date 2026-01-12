@@ -11,3 +11,4 @@ Date: 2026-01-08
 Notes for next session:
 - Start by consulting `CONTEXT.md`, `LEXICON.md` and `SESSION_NOTES.md`.
 - If retrying a deposit (base) open for BIA, enable Gateway stdout logging to capture any stack traces if it fails.
+
