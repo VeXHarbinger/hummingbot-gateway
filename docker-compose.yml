@@ -5,14 +5,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: VeXHarbinger/gateway:feature-clmm-add-remove-liquidity
+    image: hummingbot/gateway:latest
     ports:
       - "15888:15888"
     volumes:
       - "./gateway-files/conf:/home/gateway/conf"
       - "./gateway-files/logs:/home/gateway/logs"
       - "./certs:/home/gateway/certs"
-      - gateway-wallets:/home/gateway/conf/wallets
+     # If you are developing on on the gateway itself, the line below can help make the dev cycle easier
+     # Look at the persist wallet code.
+     # - gateway-wallets:/home/gateway/conf/wallets
     environment:
       GATEWAY_PASSPHRASE: admin
       DEV: 'true'
