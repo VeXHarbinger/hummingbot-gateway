@@ -1,5 +1,7 @@
 PR Title: CLMM Stake, Refactor, and Project Hygiene Improvements
 
+NOTE: This update spans API & Gateway. I've issued a PR under each as feature/clmm-add-remove-liquidity
+
 Summary
 -------
 This PR introduces the CLMM stake endpoint, refactors and organizes scripts, and enforces project hygiene for maintainability and clarity.
@@ -7,8 +9,7 @@ This PR introduces the CLMM stake endpoint, refactors and organizes scripts, and
 Key Changes
 -----------
 - Added POST /gateway/clmm/stake endpoint and supporting models, client methods, and tests.
-- Migrated and renamed CLMM-related scripts for semantic clarity (CLMM prefixing, demo scripts moved to `scripts/demos`, utility scripts to `scripts`).
-- Organized design docs into `.DesignDocs`.
+- Organized design docs into `.DesignDocs` for central AI and human rules.
 - Reverted unnecessary or trivial changes in scripts; only meaningful code modifications remain.
 - Added concise test guidelines and scaffolding for consistent testing.
 
