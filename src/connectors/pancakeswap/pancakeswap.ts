@@ -22,6 +22,7 @@ import {
   getPancakeswapV3NftManagerAddress,
   getPancakeswapV3QuoterV2ContractAddress,
   getPancakeswapV3FactoryAddress,
+  getPancakeswapV3MasterchefAddress,
 } from './pancakeswap.contracts';
 import { isValidV2Pool, isValidV3Pool } from './pancakeswap.utils';
 import { UniversalRouterService } from './universal-router';
@@ -48,6 +49,9 @@ export class Pancakeswap {
   private v3NFTManager: Contract;
   private v3Quoter: Contract;
   private universalRouter: UniversalRouterService;
+
+  // MasterChef contract
+  private masterChef: Contract;
 
   // Network information
   private networkName: string;
@@ -125,6 +129,32 @@ export class Pancakeswap {
             ],
             name: 'quoteExactInput',
             outputs: [{ internalType: 'uint256', name: 'amountOut', type: 'uint256' }],
+            stateMutability: 'nonpayable',
+            type: 'function',
+          },
+        ],
+        this.ethereum.provider,
+      );
+
+      // Initialize MasterChef contract
+      this.masterChef = new Contract(
+        getPancakeswapV3MasterchefAddress(this.networkName),
+        [
+          {
+            inputs: [
+              { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
+            ],
+            name: 'stake',
+            outputs: [],
+            stateMutability: 'nonpayable',
+            type: 'function',
+          },
+          {
+            inputs: [
+              { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
+            ],
+            name: 'unstake',
+            outputs: [],
             stateMutability: 'nonpayable',
             type: 'function',
           },
@@ -521,6 +551,36 @@ export class Pancakeswap {
       throw new Error(
         `Insufficient NFT approval. Please approve the position NFT (${positionId}) for the Pancakeswap Position Manager (${operatorAddress})`,
       );
+    }
+  }
+
+  /**
+   * Stake an NFT in the MasterChef contract
+   * @param tokenId The ID of the NFT to stake
+   */
+  public async stakeNft(tokenId: number): Promise<void> {
+    try {
+      const tx = await this.masterChef.stake(tokenId);
+      await tx.wait();
+      logger.info(`Successfully staked NFT with tokenId ${tokenId}`);
+    } catch (error) {
+      logger.error(`Failed to stake NFT: ${error.message}`);
+      throw error;
+    }
+  }
+
+  /**
+   * Unstake an NFT from the MasterChef contract
+   * @param tokenId The ID of the NFT to unstake
+   */
+  public async unstakeNft(tokenId: number): Promise<void> {
+    try {
+      const tx = await this.masterChef.unstake(tokenId);
+      await tx.wait();
+      logger.info(`Successfully unstaked NFT with tokenId ${tokenId}`);
+    } catch (error) {
+      logger.error(`Failed to unstake NFT: ${error.message}`);
+      throw error;
     }
   }
 
