@@ -5,7 +5,7 @@
 This PR introduces the integration of PancakeSwap V3 MasterChef functionality, enabling staking and unstaking of NFTs. The following updates have been made:
 
 - **Integration**: Added `stakeNft` and `unstakeNft` methods to the PancakeSwap connector.
-- **Routes**: Defined new routes in `masterchef-stake.ts` and `masterchef-unstake.ts`.
+- **Routes**: Defined new routes in `masterchef/stake.ts` and `masterchef/unstake.ts`.
 - **Unit Tests**: Created unit tests for the new routes to ensure proper functionality.
 
 ## What changed
@@ -33,8 +33,8 @@ Ensure that all tests pass successfully in the CI pipeline.
 
 ## Files changed (for reviewer convenience)
 
-- `src/clmm-routes/masterchef-stake.ts` (new)
-- `src/clmm-routes/masterchef-unstake.ts` (new)
+- `src/clmm-routes/masterchef/stake.ts` (new)
+- `src/clmm-routes/masterchef/unstake.ts` (new)
 - `test/clmm-routes/masterchef-stake.test.ts` (new)
 - `test/clmm-routes/masterchef-unstake.test.ts` (new)
 - `src/connectors/pancakeswap/pancakeswap.ts` (updated)

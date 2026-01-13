@@ -25,7 +25,7 @@ describe('MasterChef Unstake Routes', () => {
   it('should return 400 if required parameters are missing', async () => {
     const response = await fastify.inject({
       method: 'POST',
-      url: '/masterchef-unstake',
+      url: '/masterchef/unstake',
       payload: {},
     });
 
@@ -36,7 +36,7 @@ describe('MasterChef Unstake Routes', () => {
   it('should return 200 on successful unstaking', async () => {
     const response = await fastify.inject({
       method: 'POST',
-      url: '/masterchef-unstake',
+      url: '/masterchef/unstake',
       payload: { network: 'bsc-mainnet', tokenId: 123 },
     });
 

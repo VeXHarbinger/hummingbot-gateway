@@ -7,7 +7,7 @@ interface MasterChefRequestBody {
 }
 
 export default async function masterchefStakeRoutes(fastify: FastifyInstance) {
-  fastify.post('/masterchef-stake', async (request, reply) => {
+  fastify.post('/masterchef/stake', async (request, reply) => {
     const { network, tokenId } = request.body as MasterChefRequestBody;
 
     if (!network || !tokenId) {
