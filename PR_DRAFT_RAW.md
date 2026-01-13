@@ -49,3 +49,7 @@ Ensure that all tests pass successfully in the CI pipeline.
 ## Notes / follow-ups
 
 - The `root.yml` file was missing in the `dist` directory and was restored to resolve test failures.
+
+### Note:
+- Ensure any personal token tracking data is removed from `gateway-files/conf/pools/pancakeswap.json` and similar JSON files before submitting the PR.
+- We should remove any of the tracked LPs and tokens we've been using for testing and extending the gateway.
