@@ -7,6 +7,8 @@ This PR introduces the integration of PancakeSwap V3 MasterChef functionality, e
 - **Integration**: Added `stakeNft` and `unstakeNft` methods to the PancakeSwap connector.
 - **Routes**: Defined new routes in `masterchef/stake.ts` and `masterchef/unstake.ts`.
 - **Unit Tests**: Created unit tests for the new routes to ensure proper functionality.
+- **Swagger Documentation**: Added Swagger schema definitions for the `masterchef/stake` and `masterchef/unstake` endpoints.
+- **.dockerignore Update**: Excluded `node_modules` from the Docker build context to optimize the build process.
 
 ## What changed
 
@@ -44,6 +46,8 @@ Ensure that all tests pass successfully in the CI pipeline.
 
 - [ ] Verify the correctness of the `stakeNft` and `unstakeNft` methods.
 - [ ] Ensure the new routes are properly defined and tested.
+- [ ] Ensure the new routes properly render in the swagger docs.
+  - [ ] Ensure the new routes properly generated into the `openapi.json` reference
 - [ ] Confirm that all TypeScript errors have been resolved.
 
 ## Notes / follow-ups
@@ -53,3 +57,7 @@ Ensure that all tests pass successfully in the CI pipeline.
 ### Note:
 - Ensure any personal token tracking data is removed from `gateway-files/conf/pools/pancakeswap.json` and similar JSON files before submitting the PR.
 - We should remove any of the tracked LPs and tokens we've been using for testing and extending the gateway.
+
+## Note for QA
+
+- The OpenAPI file was manually updated to include the new `/connectors/pancakeswap/clmm/add-liquidity` and `/connectors/pancakeswap/clmm/close-position` endpoints. Please verify that the OpenAPI generation process includes these routes correctly in your configuration.
