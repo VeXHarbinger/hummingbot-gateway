@@ -11,8 +11,14 @@ import positionsOwnedRoute from './positionsOwned';
 import quotePositionRoute from './quotePosition';
 import quoteSwapRoute from './quoteSwap';
 import removeLiquidityRoute from './removeLiquidity';
+import masterchefStakeRoute from './masterchef/stake';
+import masterchefUnstakeRoute from './masterchef/unstake';
 
 export const pancakeswapClmmRoutes: FastifyPluginAsync = async (fastify) => {
+  fastify.addHook('onRoute', (routeOptions) => {
+    fastify.log.info(`Route registered: ${routeOptions.method} ${routeOptions.url}`);
+  });
+
   await fastify.register(poolInfoRoute);
   await fastify.register(positionInfoRoute);
   await fastify.register(positionsOwnedRoute);
@@ -24,6 +30,8 @@ export const pancakeswapClmmRoutes: FastifyPluginAsync = async (fastify) => {
   await fastify.register(removeLiquidityRoute);
   await fastify.register(collectFeesRoute);
   await fastify.register(closePositionRoute);
+  await fastify.register(masterchefStakeRoute);
+  await fastify.register(masterchefUnstakeRoute);
 };
 
 export default pancakeswapClmmRoutes;

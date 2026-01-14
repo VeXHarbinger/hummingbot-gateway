@@ -15,7 +15,7 @@ export default async function masterchefStakeRoutes(fastify: FastifyInstance) {
     {
       schema: {
         description: 'Stake an NFT in the MasterChef contract',
-        tags: ['MasterChef'],
+        tags: ['/connector/pancakeswap'],
         body: MasterChefStakeSchema,
         response: {
           200: Type.Object({ message: Type.String() }),
