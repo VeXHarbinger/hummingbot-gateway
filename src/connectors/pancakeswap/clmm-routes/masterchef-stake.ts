@@ -1,6 +1,7 @@
-import { FastifyInstance } from 'fastify';
-import { Pancakeswap } from '../connectors/pancakeswap/pancakeswap';
 import { Static, Type } from '@sinclair/typebox';
+import { FastifyInstance } from 'fastify';
+
+import { Pancakeswap } from '../pancakeswap';
 
 const MasterChefStakeSchema = Type.Object({
   network: Type.String({ description: 'Blockchain network (e.g., bsc-mainnet)' }),
@@ -11,11 +12,11 @@ type MasterChefStakeRequest = Static<typeof MasterChefStakeSchema>;
 
 export default async function masterchefStakeRoutes(fastify: FastifyInstance) {
   fastify.post<{ Body: MasterChefStakeRequest }>(
-    '/masterchef/stake',
+    '/connector/pancakeswap/clmm/masterchef-stake',
     {
       schema: {
         description: 'Stake an NFT in the MasterChef contract',
-        tags: ['/connector/pancakeswap'],
+        tags: ['/connector/pancakeswap/clmm'],
         body: MasterChefStakeSchema,
         response: {
           200: Type.Object({ message: Type.String() }),

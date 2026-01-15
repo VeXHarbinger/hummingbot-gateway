@@ -4,6 +4,8 @@ import addLiquidityRoute from './addLiquidity';
 import closePositionRoute from './closePosition';
 import collectFeesRoute from './collectFees';
 import executeSwapRoute from './executeSwap';
+import masterchefStakeRoute from './masterchef-stake';
+import masterchefUnstakeRoute from './masterchef-unstake';
 import openPositionRoute from './openPosition';
 import poolInfoRoute from './poolInfo';
 import positionInfoRoute from './positionInfo';
@@ -11,8 +13,6 @@ import positionsOwnedRoute from './positionsOwned';
 import quotePositionRoute from './quotePosition';
 import quoteSwapRoute from './quoteSwap';
 import removeLiquidityRoute from './removeLiquidity';
-import masterchefStakeRoute from './masterchef/stake';
-import masterchefUnstakeRoute from './masterchef/unstake';
 
 export const pancakeswapClmmRoutes: FastifyPluginAsync = async (fastify) => {
   fastify.addHook('onRoute', (routeOptions) => {

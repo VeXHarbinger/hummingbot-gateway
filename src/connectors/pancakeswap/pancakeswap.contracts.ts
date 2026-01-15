@@ -44,7 +44,7 @@ export const contractAddresses: NetworkContractAddresses = {
     pancakeswapV3QuoterV2ContractAddress: '0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997',
     pancakeswapV3FactoryAddress: '0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865',
     pancakeswapV3PoolDeployerAddress: '0x41ff9AA7e16B8B1a8a8dc4f0eFacd93D02d071c9',
-    pancakeswapV3MasterchefAddress: '0x1234567890abcdef1234567890abcdef12345678', // Placeholder address
+    pancakeswapV3MasterchefAddress: '0x556B9306565093C855AEA9AE92A594704c2Cd59e', // Placeholder address
     // Universal Router V2 - Official Pancakeswap address
     universalRouterV2Address: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
   },
@@ -58,7 +58,7 @@ export const contractAddresses: NetworkContractAddresses = {
     pancakeswapV3QuoterV2ContractAddress: '0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997',
     pancakeswapV3FactoryAddress: '0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865',
     pancakeswapV3PoolDeployerAddress: '0x41ff9AA7e16B8B1a8a8dc4f0eFacd93D02d071c9',
-    pancakeswapV3MasterchefAddress: '0x1234567890abcdef1234567890abcdef12345678', // Placeholder address
+    pancakeswapV3MasterchefAddress: '0x5e09ACf80C0296740eC5d6F643005a4ef8DaA694',
     // Universal Router V2 - Official Pancakeswap address
     universalRouterV2Address: '0x32226588378236Fd0c7c4053999F88aC0e5cAc77',
   },
@@ -72,7 +72,7 @@ export const contractAddresses: NetworkContractAddresses = {
     pancakeswapV3QuoterV2ContractAddress: '0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997',
     pancakeswapV3FactoryAddress: '0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865',
     pancakeswapV3PoolDeployerAddress: '0x41ff9AA7e16B8B1a8a8dc4f0eFacd93D02d071c9',
-    pancakeswapV3MasterchefAddress: '0x1234567890abcdef1234567890abcdef12345678', // Placeholder address
+    pancakeswapV3MasterchefAddress: '0xC6A2Db661D5a5690172d8eB0a7DEA2d3008665A3',
     // Universal Router V2 - Official Pancakeswap address
     universalRouterV2Address: '0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86',
   },
@@ -86,7 +86,7 @@ export const contractAddresses: NetworkContractAddresses = {
     pancakeswapV3QuoterV2ContractAddress: '0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997',
     pancakeswapV3FactoryAddress: '0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865',
     pancakeswapV3PoolDeployerAddress: '0x41ff9AA7e16B8B1a8a8dc4f0eFacd93D02d071c9',
-    pancakeswapV3MasterchefAddress: '0x1234567890abcdef1234567890abcdef12345678', // Placeholder address
+    pancakeswapV3MasterchefAddress: '0x556B9306565093C855AEA9AE92A594704c2Cd59e',
     // Universal Router V2 - Official Pancakeswap address
     universalRouterV2Address: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
   },
@@ -569,9 +569,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapExactTokensForTokens',
-      outputs: [
-        { internalType: 'uint256', name: 'amountOut', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountOut', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -585,9 +583,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapExactTokensForETH',
-      outputs: [
-        { internalType: 'uint256', name: 'amountOut', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountOut', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -601,9 +597,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapExactTokensForTokensSupportingFeeOnTransferTokens',
-      outputs: [
-        { internalType: 'uint256', name: 'amountOut', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountOut', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -617,9 +611,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapExactTokensForETHSupportingFeeOnTransferTokens',
-      outputs: [
-        { internalType: 'uint256', name: 'amountOut', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountOut', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -631,9 +623,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapTokensForExactTokens',
-      outputs: [
-        { internalType: 'uint256', name: 'amountIn', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountIn', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -647,9 +637,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapTokensForExactETH',
-      outputs: [
-        { internalType: 'uint256', name: 'amountIn', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountIn', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -663,9 +651,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapTokensForExactTokensSupportingFeeOnTransferTokens',
-      outputs: [
-        { internalType: 'uint256', name: 'amountIn', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountIn', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
@@ -679,9 +665,7 @@ export const IPancakeswapV2Router02ABI = {
         { internalType: 'uint256', name: 'deadline', type: 'uint256' },
       ],
       name: 'swapTokensForExactETHSupportingFeeOnTransferTokens',
-      outputs: [
-        { internalType: 'uint256', name: 'amountIn', type: 'uint256' },
-      ],
+      outputs: [{ internalType: 'uint256', name: 'amountIn', type: 'uint256' }],
       stateMutability: 'nonpayable',
       type: 'function',
     },
